@@ -1,0 +1,21 @@
+services:
+  eas_nanoowl:
+    image: nanoowl:jp7-thor-persist
+    container_name: eas_nanoowl
+    runtime: nvidia
+    ipc: host
+    shm_size: "2g"
+    ports:
+      - "7860:7860"
+    devices:
+      - "/dev/video0:/dev/video0"
+    environment:
+      MODEL_DIR: /models
+      ENGINE_PATH: /models/engines/owl_image_encoder_patch32.engine
+      LD_LIBRARY_PATH: /usr/local/lib/python3.12/dist-packages/tensorrt_libs:/opt/hostlibs:/usr/src/tensorrt/lib
+    volumes:
+      - "${MODEL_DIR:-/opt/Advantech/EdgeAI/System/Nvidia_Jetson/VisionAI/app/nanoowl}:/models"
+      - "/usr/src/tensorrt:/usr/src/tensorrt:ro"
+      - "/usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so.10:/opt/hostlibs/libnvinfer_plugin.so.10:ro"
+      - "/usr/lib/aarch64-linux-gnu/libnvinfer_plugin.so.10.13.3:/opt/hostlibs/libnvinfer_plugin.so.10.13.3:ro"
+    command: ["/opt/nanoowl/docker/jetpack7-thor/run_tree_demo_persistent.sh"]
