@@ -7,7 +7,7 @@ Upstream project: <https://github.com/NVIDIA-AI-IOT/nanoowl>
 - **Category**: General-purpose Edge Vision AI
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ADVANTECH-Corp/edge-ai-hub/main/AI_Case/General_Purpose/NanoOWL/assets/jetson_person_2x.gif" width="70%" />
+  <img src="assets/jetson_person_2x.gif" width="70%" />
 </p>
 
 ## OWL-ViT
@@ -34,7 +34,7 @@ Upstream project: <https://github.com/NVIDIA-AI-IOT/nanoowl>
 mkdir /opt/Advantech/EdgeAI/EdgeAIHub
 cd /opt/Advantech/EdgeAI/EdgeAIHub
 git clone https://github.com/ADVANTECH-Corp/edge-ai-hub
-cd edge-ai-hub/AI_Case/General_Purpose/NanoOWL
+cd edge-ai-hub/AI_Case/General/NanoOWL
 ```
 
 ## Step 2: Check AI environment
