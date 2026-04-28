@@ -2,7 +2,7 @@
 
 NanoOWL provides prompt-driven vision inference for edge devices, enabling real-time object detection and tree-structured semantic inference (Tree Prediction). It is suitable for rapid PoC and production deployment in smart manufacturing, retail, public spaces, and industrial monitoring scenarios.
 
-Project source: <https://github.com/ADVANTECH-Corp/edge-ai-hub/tree/main/AI_Case/General_Purpose/NanoOWL>
+Upstream project: <https://github.com/NVIDIA-AI-IOT/nanoowl>
 
 - **Category**: General-purpose Edge Vision AI
 
