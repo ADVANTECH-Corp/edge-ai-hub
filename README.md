@@ -27,19 +27,6 @@ Developers can follow the SOP, deploy the application to supported Advantech Edg
 
 ## What You Can Find in This Repository
 
-Edge AI Hub includes multiple Edge AI application scenarios, such as:
-
-- Vision AI object detection
-- Prompt-driven vision inference
-- Vision-Language Model applications
-- Generative AI on edge devices
-- Industrial defect detection
-- Smart manufacturing monitoring
-- Smart retail analytics
-- Public space monitoring
-- Robotics and AMR perception
-- Medical AI proof-of-concept applications
-
 Each AI case provides:
 
 - Application introduction
@@ -53,14 +40,3 @@ Each AI case provides:
 
 ---
 
-## Repository Structure
-
-```text
-edge-ai-hub/
-├── AI_Case/
-│   ├── General/
-│   │   └── NanoOWL/
-│   ├── Robotics/
-│   ├── Medical/
-│   └── Industrial/
-└── README.md
