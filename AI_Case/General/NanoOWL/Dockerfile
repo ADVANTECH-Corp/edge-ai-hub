@@ -57,7 +57,6 @@ RUN python3 -m pip install --break-system-packages -e /opt/nanoowl/upstream
 RUN python3 -m pip install --break-system-packages aiohttp matplotlib git+https://github.com/openai/CLIP.git
 
 RUN mkdir -p /opt/nanoowl/docker/jetpack7-thor
-COPY ./smoke_test.py /opt/nanoowl/docker/jetpack7-thor/smoke_test.py
 COPY ./run_tree_demo_persistent.sh /opt/nanoowl/docker/jetpack7-thor/run_tree_demo_persistent.sh
 RUN chmod +x /opt/nanoowl/docker/jetpack7-thor/run_tree_demo_persistent.sh
 
