@@ -7,7 +7,7 @@ Upstream project: <https://github.com/NVIDIA-AI-IOT/nanoowl>
 - **Category**: General-purpose Edge Vision AI
 
 <p align="center">
-  <img src="assets/jetson_person_2x.gif" width="70%" />
+  <img src="assets/NanoOWL.gif" width="70%" />
 </p>
 
 ## OWL-ViT
@@ -68,4 +68,4 @@ docker compose up -d
 Open: `http://<device-ip>:7860`
 
 ## Result
-<p align="center"> <img src="assets/nanoowl_chrome_window.png" width="70%" /> </p>
+<p align="center"> <img src="assets/NanoOWL.gif" width="70%" /> </p>
