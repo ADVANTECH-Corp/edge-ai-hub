@@ -34,7 +34,8 @@ Upstream project: [qualcomm/gear_guard_net](https://github.com/qualcomm/ai-hub-m
 ## Step 1. System Setup & Virtual Environment
 ```bash
 # NOTE: 3.10 <= PYTHON_VERSION < 3.14 is supported.
-cd ~
+mkdir /opt/Advantech/EdgeAI/EdgeAIHub
+cd /opt/Advantech/EdgeAI/EdgeAIHub
 git clone https://github.com/ADVANTECH-Corp/edge-ai-hub
 cd edge-ai-hub/AI_Case/Industrial/PPE-Detection
 
@@ -60,6 +61,8 @@ pip install qai_hub_models==0.48.0 object-detection-metrics==0.4 aiofiles==25.1.
 
 ## Setup 1: RUN CLI Demo
 ```bash
+cd /opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/PPE-Detection
+
 python -m qai_hub_models.models.gear_guard_net.demo \
 --quantize w8a16 \
 --target-runtime qnn_dlc \
