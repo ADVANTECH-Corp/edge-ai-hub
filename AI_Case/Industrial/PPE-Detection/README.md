@@ -25,7 +25,7 @@ Upstream project: [qualcomm/gear_guard_net](https://github.com/qualcomm/ai-hub-m
 
 | Platform | Hardware Spec | OS | Edge AI SDK | 
 |---|---|---|---|
-| AIR-055 | Qualcomm IQ-9075 - RAM: 36 GB, Storage: 128 GB | Ubuntu 24.04.3 LTS | [Install](https://docs.edge-ai-sdk.advantech.com/docs/Hardware/AI_System/Qualcomm/IQ9/AIR-055) |
+| [AIR-055](https://www.advantech.com/zh-tw/products/932c8818-07cc-4917-89e9-7a678ddc029c/air-055/mod_4e23ea2a-d196-4884-8c62-c31780fbafb0) | Qualcomm IQ-9075 - RAM: 36 GB, Storage: 128 GB | Ubuntu 24.04.3 LTS | [Install](https://docs.edge-ai-sdk.advantech.com/docs/Hardware/AI_System/Qualcomm/IQ9/AIR-055) |
 
 ---
 
