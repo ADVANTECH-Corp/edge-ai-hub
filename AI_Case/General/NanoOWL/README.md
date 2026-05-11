@@ -61,7 +61,7 @@ docker build -t nanoowl:jp7-thor-persist -f ./Dockerfile .
 
 ## Setup 2: Launch the demo
 ```bash
-docker compose up -d
+docker compose up
 ```
 
 ## Setup 3: Open your browser
