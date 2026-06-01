@@ -97,7 +97,7 @@ Expected: the TensorRT Edge-LLM C++ runtime should be built successfully for Jet
 ./build_qwen3_4b_engine_host.sh
 ```
 
-Expected: the optimized TensorRT engine should be generated under `tensorrt-edgellm-workspace/engine`.
+Expected: the optimized TensorRT engine should be generated under `tensorrt-edgellm-workspace/Qwen3-4B-Instruct/engine`.
 
 ## Setup 3: Create an input prompt file
 
