@@ -4,7 +4,7 @@ services:
     container_name: trtedgellm-export
     working_dir: /workspace
     volumes:
-      - /opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/General/TensorRT-Edge-LLM-Qwen3-4B-Instruct:/workspace
+      - /opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/General/TensorRT-Edge-LLM:/workspace
     gpus: all
     stdin_open: true
     tty: true
