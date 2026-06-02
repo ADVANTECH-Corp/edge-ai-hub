@@ -1,6 +1,6 @@
 # TensorRT Edge-LLM Qwen3-4B-Instruct
 
-TensorRT Edge-LLM Qwen3-4B-Instruct provides on-device large language model inference for edge devices, enabling real-time text generation and instruction-following inference on NVIDIA Jetson Thor. It is suitable for rapid PoC and production deployment in industrial AI assistants, robotics control interfaces, edge chatbot services, and private on-premises GenAI scenarios.
+TensorRT Edge-LLM provides on-device large language model inference for edge devices, enabling real-time text generation and instruction-following inference on NVIDIA Jetson Thor. It is suitable for rapid PoC and production deployment in industrial AI assistants, robotics control interfaces, edge chatbot services, and private on-premises GenAI scenarios.
 
 Upstream project: [TensorRT Edge-LLM on Jetson](https://www.jetson-ai-lab.com/tutorials/tensorrt-edge-llm/)
 
