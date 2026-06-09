@@ -1,6 +1,6 @@
 # NVIDIA TensorRT Edge-LLM
 
-TensorRT Edge-LLM is NVIDIA’s optimized C++ inference runtime designed for running LLMs and VLMs on embedded platforms. Its deployment flow converts trained models into highly optimized TensorRT engines, which are then executed by a lightweight native runtime at inference time. Because the runtime loads and serves these engines directly without relying on Python in the inference path, it is better suited for production edge deployment. By supporting low-precision formats such as INT4, NVFP4, and FP8, TensorRT Edge-LLM can reduce model memory requirements, making larger models more feasible on devices with limited memory.
+TensorRT Edge-LLM is NVIDIA’s optimized C++ inference runtime designed for running LLMs and VLMs on embedded platforms. Its deployment flow converts trained models into highly optimized TensorRT engines, which are then executed by a lightweight native runtime at inference time. Because the runtime loads and serves these engines directly without relying on Python in the inference path, it is better suited for production edge deployment.
 
 Upstream project: [TensorRT Edge-LLM on Jetson](https://www.jetson-ai-lab.com/tutorials/tensorrt-edge-llm/)
 
