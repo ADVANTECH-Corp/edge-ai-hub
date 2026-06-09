@@ -4,7 +4,7 @@ TensorRT Edge-LLM is NVIDIA’s optimized C++ inference runtime designed for run
 
 Upstream project: [TensorRT Edge-LLM on Jetson](https://www.jetson-ai-lab.com/tutorials/tensorrt-edge-llm/)
 
-- **Category**: General-purpose Edge LLM
+- **Category**: Model Optimization Edge LLM
 
 ![](assets/qwen3_4b_ollama_vs_tensorrt_edge_llm.png)
 
