@@ -75,6 +75,11 @@ sudo chmod u+x ./scripts/*.sh
 /opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/scripts/run_browser.sh
 ```
 
-
 ### Result
 ![](assets/demo.png)
+
+
+### STOP
+```bash
+/opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/scripts/stop.sh
+```
