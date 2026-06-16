@@ -22,6 +22,16 @@ This solution is suitable for rapid PoC validation and production deployment in 
 
 - **PPE Detection Use Case**   
   The model checks for required safety gear such as protective clothing, safety helmets, reflective vests, gloves, and other PPE items. It helps monitor PPE compliance in warehouse, factory, logistics, and construction safety scenarios.
+  
+  **System Prompt**:
+  ```
+  Based on the image, are all individuals in the warehouse wearing appropriate safety attire?
+  Please answer “ALERT” or “SAFE”, and provide a brief description.
+
+  Response format:
+  ALERT/SAFE:
+  {{description}}
+  ```
 
 - **Edge Deployment**   
   The Ollama-based setup is designed for local inference and edge deployment, enabling periodic safety-status monitoring without relying on continuous cloud inference.
