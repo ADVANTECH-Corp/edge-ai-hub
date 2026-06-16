@@ -32,9 +32,20 @@ fi
 # Start Docker Compose services.
 "${DOCKER_COMPOSE_CMD[@]}" -f "$COMPOSE_FILE" --env-file "$ENV_FILE" up -d > /dev/null 2>&1
 
-# Loading model 
-if [ "$(docker inspect -f '{{.State.Running}}' "$OLLAMA_CONTAINER_NAME" 2>/dev/null)" = "true" ]; then
+# Loading model — wait for ollama healthcheck to pass before pulling it into memory
+OLLAMA_WAIT_TIMEOUT=120
+OLLAMA_WAIT_ELAPSED=0
+while [ "$OLLAMA_WAIT_ELAPSED" -lt "$OLLAMA_WAIT_TIMEOUT" ]; do
+    STATUS="$(docker inspect -f '{{.State.Health.Status}}' "$OLLAMA_CONTAINER_NAME" 2>/dev/null)"
+    [ "$STATUS" = "healthy" ] && break
+    sleep 5
+    OLLAMA_WAIT_ELAPSED=$((OLLAMA_WAIT_ELAPSED + 5))
+done
+
+if [ "$(docker inspect -f '{{.State.Health.Status}}' "$OLLAMA_CONTAINER_NAME" 2>/dev/null)" = "healthy" ]; then
     docker exec -i "$OLLAMA_CONTAINER_NAME" \
         ollama run "$OLLAMA_MODEL_NAME" <<< "hello" \
         >/dev/null 2>&1
+else
+    log_warn "ollama container did not become healthy within ${OLLAMA_WAIT_TIMEOUT}s, skipping model load"
 fi
