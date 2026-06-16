@@ -40,3 +40,14 @@ Each AI case provides:
 
 ---
 
+## AI Cases
+
+| Case | Category | Platform | Hardware |
+|---|---|---|---|
+| [NanoOWL](AI_Case/General/NanoOWL/README.md) | General — Edge Vision AI | AIR-075 | NVIDIA Jetson Thor |
+| [PPE-Detection](AI_Case/Industrial/PPE-Detection/README.md) | Industrial — Safety Vision AI | AIR-055 | Qualcomm IQ-9075 |
+| [VLM-Assistant](AI_Case/Industrial/VLM-Assistant/README.md) | Industrial — Safety GenAI | AIR-075 | NVIDIA Jetson Thor |
+| [NVIDIA TensorRT Edge-LLM](AI_Case/Model-Optimization/NVIDIA-TensorRT-Edge-LLM/README.md) | Model Optimization — Edge LLM | AIR-075 | NVIDIA Jetson Thor |
+
+---
+
