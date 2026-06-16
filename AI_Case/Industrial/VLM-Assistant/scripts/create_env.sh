@@ -9,6 +9,11 @@ source "$SCRIPT_DIR/utils.sh"
 # ============================================================
 # Install Functions
 # ============================================================
+# Check network connectivity
+check_network() {
+  curl -s --head https://www.google.com | grep -q "200" || ping -c 1 8.8.8.8 &>/dev/null
+}
+
 # Pull Docker image if not exists
 pull_image_if_needed() {
   local image="$1"
