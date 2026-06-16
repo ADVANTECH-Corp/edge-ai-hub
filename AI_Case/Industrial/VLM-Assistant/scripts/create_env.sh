@@ -92,7 +92,7 @@ func_install_miniconda_env() {
     local MEDIA_GATEWAY_URL="https://github.com/WillQiuAd/media-gateway.git"
     local ENV_NAME="media-gateway"
     local PYTHON_VERSION="3.10"
-    local INSTALL_DIR="$INSTALL_DIR_EAS_GenAI/app/$ENV_NAME"
+    local INSTALL_DIR="$MEDIA_GATEWAY_DIR"
     local INSTALL_PACKAGE_PATH="$INSTALL_DIR/scripts/install.sh"
 
     # Git clone media-gateway if not exists

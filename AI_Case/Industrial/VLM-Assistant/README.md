@@ -62,7 +62,7 @@ cd edge-ai-hub/AI_Case/Industrial/VLM-Assistant
 
 # ENV: Pull docker: vlm-assistant, ollama / conda: media-gateway / Download model
 sudo chmod u+x ./scripts/*.sh
-sudo ./scripts/create_env.sh
+./scripts/create_env.sh
 ```
 
 ---
@@ -71,8 +71,8 @@ sudo ./scripts/create_env.sh
 
 ### RUN Demo
 ```bash
-/opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/run.sh
-/opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/run_browser.sh
+/opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/scripts/run.sh
+/opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/scripts/run_browser.sh
 ```
 
 
