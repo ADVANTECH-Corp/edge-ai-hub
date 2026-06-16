@@ -31,3 +31,10 @@ fi
 
 # Start Docker Compose services.
 "${DOCKER_COMPOSE_CMD[@]}" -f "$COMPOSE_FILE" --env-file "$ENV_FILE" up -d > /dev/null 2>&1
+
+# Loading model 
+if [ "$(docker inspect -f '{{.State.Running}}' "$OLLAMA_CONTAINER_NAME" 2>/dev/null)" = "true" ]; then
+    docker exec -i "$OLLAMA_CONTAINER_NAME" \
+        ollama run "$OLLAMA_MODEL_NAME" <<< "hello" \
+        >/dev/null 2>&1
+fi

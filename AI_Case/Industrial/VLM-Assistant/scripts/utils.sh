@@ -27,6 +27,7 @@ STOP_SCRIPT="$ROOT_DIR/stop.sh"
 # Docker images
 VLM_ASSISTANT_IMAGE="advigw/vlm-assistant:dev"
 OLLAMA_IMAGE="ollama/ollama:0.23.0"
+OLLAMA_CONTAINER_NAME="ollama"
 
 # Model names
 OLLAMA_MODEL_NAME="gemma4:e4b-it-q4_K_M"
