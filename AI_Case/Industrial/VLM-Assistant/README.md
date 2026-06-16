@@ -76,7 +76,7 @@ sudo chmod u+x ./scripts/*.sh
 ```
 
 ### Result
-![](assets/demo.png)
+![](assets/demo.gif)
 
 
 ### STOP
