@@ -1,7 +1,7 @@
 services:
   vlm-assistant:
     container_name: vlm-assistant
-    image: advigw/vlm-assistant:1.0.0
+    image: advigw/vlm-assistant:dev
     restart: unless-stopped
     network_mode: host
     environment:
