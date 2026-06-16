@@ -62,7 +62,7 @@ cd edge-ai-hub/AI_Case/Industrial/VLM-Assistant
 
 # ENV: Pull docker: vlm-assistant, ollama / conda: media-gateway / Download model
 sudo chmod u+x ./scripts/*.sh
-sudo ./create_env.sh
+sudo ./scripts/create_env.sh
 ```
 
 ---
