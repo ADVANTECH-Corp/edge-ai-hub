@@ -25,7 +25,7 @@ LOG_FILE="$ROOT_DIR/media-gateway.log"
 STOP_SCRIPT="$ROOT_DIR/stop.sh"
 
 # Docker images
-VLMA_ASSISTANT_IMAGE="advigw/vlm-assistant:1.0.0"
+VLM_ASSISTANT_IMAGE="advigw/vlm-assistant:1.0.0"
 OLLAMA_IMAGE="ollama/ollama:0.23.0"
 
 # Model names
