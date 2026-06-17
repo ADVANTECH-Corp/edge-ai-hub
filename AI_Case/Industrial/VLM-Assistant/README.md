@@ -83,3 +83,26 @@ sudo chmod u+x ./scripts/*.sh
 ```bash
 /opt/Advantech/EdgeAI/EdgeAIHub/edge-ai-hub/AI_Case/Industrial/VLM-Assistant/scripts/stop.sh
 ```
+
+---
+
+## Download Model
+
+You can download additional Ollama models using the provided script. Browse available models at https://www.ollama.com/search.
+
+### Download a specific model
+```bash
+./scripts/ollama_pull_model.sh <model_name>
+```
+
+**Example:**
+```bash
+./scripts/ollama_pull_model.sh llama3.2:3b
+./scripts/ollama_pull_model.sh gemma4:e4b-it-q4_K_M
+```
+
+### Download the default model
+Running without arguments downloads the default model (`gemma4:e4b-it-q4_K_M`):
+```bash
+./scripts/ollama_pull_model.sh
+```

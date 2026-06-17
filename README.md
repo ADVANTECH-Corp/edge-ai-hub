@@ -5,6 +5,16 @@ Edge AI Hub is a developer-focused repository of practical Edge AI application e
 It provides scenario-based AI cases across domains such as Vision AI, Generative AI, Vision-Language Models, robotics, industrial monitoring, smart retail, medical AI, and smart manufacturing.  
 Each case includes a structured README with deployment steps, runtime requirements, execution commands, and expected results, helping developers quickly evaluate and deploy AI applications on supported Advantech devices.
 
+---
+
+## AI Cases
+
+| Case | Category | Platform | Hardware |
+|---|---|---|---|
+| [NanoOWL](AI_Case/General/NanoOWL/README.md) | General — Edge Vision AI | AIR-075 | NVIDIA Jetson Thor |
+| [PPE-Detection](AI_Case/Industrial/PPE-Detection/README.md) | Industrial — Safety Vision AI | AIR-055 | Qualcomm IQ-9075 |
+| [VLM-Assistant](AI_Case/Industrial/VLM-Assistant/README.md) | Industrial — Safety GenAI | AIR-075 | NVIDIA Jetson Thor |
+| [NVIDIA TensorRT Edge-LLM](AI_Case/Model-Optimization/NVIDIA-TensorRT-Edge-LLM/README.md) | Model Optimization — Edge LLM | AIR-075 | NVIDIA Jetson Thor |
 
 ---
 
@@ -38,16 +48,5 @@ Each AI case provides:
 - Demo execution command
 - Expected output
 
----
 
-## AI Cases
-
-| Case | Category | Platform | Hardware |
-|---|---|---|---|
-| [NanoOWL](AI_Case/General/NanoOWL/README.md) | General — Edge Vision AI | AIR-075 | NVIDIA Jetson Thor |
-| [PPE-Detection](AI_Case/Industrial/PPE-Detection/README.md) | Industrial — Safety Vision AI | AIR-055 | Qualcomm IQ-9075 |
-| [VLM-Assistant](AI_Case/Industrial/VLM-Assistant/README.md) | Industrial — Safety GenAI | AIR-075 | NVIDIA Jetson Thor |
-| [NVIDIA TensorRT Edge-LLM](AI_Case/Model-Optimization/NVIDIA-TensorRT-Edge-LLM/README.md) | Model Optimization — Edge LLM | AIR-075 | NVIDIA Jetson Thor |
-
----
 
