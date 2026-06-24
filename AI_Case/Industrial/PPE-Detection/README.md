@@ -41,7 +41,7 @@ cd edge-ai-hub/AI_Case/Industrial/PPE-Detection
 
 python3 -m venv venv
 source venv/bin/activate
-pip install qai_hub_models==0.48.0 object-detection-metrics==0.4 aiofiles==25.1.0
+pip install qai_hub_models object-detection-metrics aiofiles shapely
 ```
 
 ## Step 2. Configure Qualcomm AI Hub
@@ -69,7 +69,7 @@ python -m qai_hub_models.models.gear_guard_net.demo \
 --chipset qualcomm-qcs9075 \
 --score-threshold 0.1 \
 --eval-mode on-device \
---image ppe.jpg \
+--image ppe.jpg
 ```
 
 
