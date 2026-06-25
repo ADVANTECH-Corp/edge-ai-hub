@@ -34,6 +34,7 @@ Upstream project: [qualcomm/gear_guard_net](https://github.com/qualcomm/ai-hub-m
 ## Step 1. System Setup & Virtual Environment
 ```bash
 # NOTE: 3.10 <= PYTHON_VERSION < 3.14 is supported.
+sudo apt install -y python3-pip python3-venv
 mkdir /opt/Advantech/EdgeAI/EdgeAIHub
 cd /opt/Advantech/EdgeAI/EdgeAIHub
 git clone https://github.com/ADVANTECH-Corp/edge-ai-hub
