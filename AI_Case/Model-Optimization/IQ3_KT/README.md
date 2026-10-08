@@ -258,6 +258,8 @@ Stop the current model API without stopping SDK Chatbot or deleting models and c
 ```bash
 cd /home/ubuntu/Downloads/edge-ai-hub/AI_Case/Model-Optimization/IQ3_KT
 ./scripts/stop_iq3kt.sh
+or
+./scripts/stop_q4km.sh
 ```
 
 `stop_q4km.sh` targets the same API container. To restart or switch, use the corresponding run script. It checks the model, NVIDIA Runtime, and local image before replacing the project's container. Wait for active requests to finish first.
