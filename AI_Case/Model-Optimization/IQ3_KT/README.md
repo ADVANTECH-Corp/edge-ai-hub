@@ -271,7 +271,6 @@ cd /home/ubuntu/Downloads/edge-ai-hub/AI_Case/Model-Optimization/IQ3_KT
 | Port 18081 occupied | Identify the listener. The scripts manage only `iq3kt-jp6-api` and refuse an unrelated service. Avoid global container or process cleanup. |
 | API not ready or model load failed | Check available memory and the server log below before continuing to Chatbot. |
 | Chatbot missing the model or showing the old name | Recheck `/v1/models`, confirm the connection URL includes `/v1`, reload the model list, and select the currently loaded ID. |
-| Chatbot unavailable or admin settings locked | Use the existing SDK Chatbot and normal login. Ask the SDK administrator to enable access; do not deploy another WebUI to conceal the issue. |
 | Response incomplete | Wait for generation to finish. If the answer is cut off or an error appears, check the output limit and API logs. |
 
 ```bash
