@@ -55,7 +55,7 @@ Use a JetPack environment compatible with this JP6 runtime. The JP7 image is a s
 - Git, curl, Docker with NVIDIA Runtime, and a browser.
 - The existing Edge AI SDK Chatbot, with normal login and administrator access to connection settings.
 - Storage for both GGUF files and enough RAM for the loaded model, runtime buffers, and SDK. Model file size is not runtime RAM usage.
-- Optionally, .[jtop].(https://github.com/rbonghi/jetson_stats) for observing system resources. It is not an API dependency.
+- Optionally, [jtop](https://github.com/rbonghi/jetson_stats) for observing system resources. It is not an API dependency.
 
 ## Setup
 
