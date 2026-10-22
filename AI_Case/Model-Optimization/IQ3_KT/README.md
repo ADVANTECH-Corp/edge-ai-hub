@@ -230,7 +230,7 @@ The examples below show IQ3_KT and Q4_K_M responding to `who are you?` in Edge A
 <details open>
 <summary>IQ3_KT — Deployment and Chat Demo (show / hide animation)</summary>
 
-![IQ3_KT model selection and Chatbot response animation.](assets/iq3kt.gif)
+![IQ3_KT model selection and Chatbot response animation.](assets/iq3kt_1_2.gif)
 
 </details>
 
@@ -241,7 +241,7 @@ The examples below show IQ3_KT and Q4_K_M responding to `who are you?` in Edge A
 <details open>
 <summary>Q4_K_M — Deployment and Chat Demo (show / hide animation)</summary>
 
-![Q4_K_M model selection and Chatbot response animation.](assets/q4km.gif)
+![Q4_K_M model selection and Chatbot response animation.](assets/q4km_1.gif)
 
 </details>
 
