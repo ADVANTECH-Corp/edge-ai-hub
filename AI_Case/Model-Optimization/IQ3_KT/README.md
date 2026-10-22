@@ -2,6 +2,8 @@
 
 Deploy Qwen3VL-8B-Instruct with IQ3_KT quantization on an NVIDIA Jetson, expose a local OpenAI-compatible API, and chat through the existing Edge AI SDK Chatbot. This case also shows how to switch to Q4_K_M using the same runtime.
 
+![SW Architecture of Edge AI SDK](assets/SW_Architecture_1.png)
+
 In this demonstration, IQ3_KT used approximately **1.8 GB less system RAM** than Q4_K_M, leaving more memory available on a memory-constrained Jetson. See the [RAM usage comparison](#ram-usage-comparison) for the demonstration results.
 
 - **Category**: Model Optimization — Edge LLM
