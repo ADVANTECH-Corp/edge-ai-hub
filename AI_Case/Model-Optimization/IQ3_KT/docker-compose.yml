@@ -1,0 +1,20 @@
+name: iq3kt
+
+services:
+  llama-server:
+    image: advigw/iq3kt-llama-server:jp6_b8779
+    runtime: nvidia
+    network_mode: host
+    volumes:
+      - type: bind
+        source: /home/ubuntu/Downloads/iq3kt/models
+        target: /models
+        read_only: true
+        bind:
+          create_host_path: false
+    command: >-
+      -m /models/Qwen3VL-8B-Instruct-IQ3_KT.gguf
+      --alias Qwen3VL-8B-Instruct-IQ3_KT
+      --host 127.0.0.1 --port 18081
+      -c 4096 -b 1024 -ub 512 -ngl 99
+      -ctk q4_0 -ctv q4_0 -fa on --parallel 1
