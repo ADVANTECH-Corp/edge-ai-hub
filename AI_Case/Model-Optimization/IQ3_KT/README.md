@@ -23,7 +23,7 @@ In this demonstration, IQ3_KT used approximately **1.8 GB less system RAM** than
   - [RAM Usage Comparison](#ram-usage-comparison)
 - [Stop](#stop)
 - [Deploy Across the AIR Series of Jetson Platforms](#deploy-across-the-air-series-of-jetson-platforms)
-  - [Runtime Selection](#runtime-selection)
+  - [Runtime Setup for JetPack 7](#runtime-setup-for-jetpack-7)
 - [Additional IQ3_KT Model Options](#additional-iq3_kt-model-options)
 - [Troubleshooting](#troubleshooting)
 
@@ -281,14 +281,27 @@ This walkthrough uses AIR-021 with JetPack 6. The IQ3_KT deployment approach can
 
 The [RAM usage comparison](#ram-usage-comparison) applies to the AIR-021 demonstration shown here. Select the model and runtime for the specific hardware and JetPack version.
 
-### Runtime Selection
+### Runtime Setup for JetPack 7
 
-- **JetPack 6 — this walkthrough:** `advigw/iq3kt-llama-server:jp6_b8779`
-- **JetPack 7 — AIR-075:** `advigw/iq3kt-llama-server:jp7_b8779`
+For AIR-075 or other AIR-series platforms running a supported JetPack 7 release, confirm that the JP7 runtime image below supports the target Jetson hardware before proceeding.
 
-The bundled `scripts/run_iq3kt.sh` fixes `IMAGE` to the JP6 tag. `scripts/run_q4km.sh` calls the same script with a different model filename, so both currently select JP6. Image pulling is a separate setup step; startup uses `--pull=never` and does not select a JetPack version automatically.
+Before starting either model:
 
-For AIR-075 / JetPack 7, pull the JP7 image separately and adjust `IMAGE` in `scripts/run_iq3kt.sh` to the JP7 tag before using either launcher. **Pulling the JP7 image alone does not switch the scripts to it.** Check runtime and model compatibility on the target hardware; the steps and results above cover AIR-021 / JP6.
+1. Download the JP7 runtime image:
+
+   ```bash
+   sudo docker pull advigw/iq3kt-llama-server:jp7_b8779
+   ```
+
+2. Open `scripts/run_iq3kt.sh` and replace its existing `IMAGE` line with:
+
+   ```bash
+   IMAGE="advigw/iq3kt-llama-server:jp7_b8779"
+   ```
+
+No change to `scripts/run_q4km.sh` is needed; both launchers will use the updated image setting.
+
+The deployment examples and RAM readings in this guide cover JetPack 6. For AIR-075 or other AIR-series platforms running JetPack 7, verify runtime compatibility, model support, and available memory on the target device before deployment.
 
 ## Additional IQ3_KT Model Options
 
