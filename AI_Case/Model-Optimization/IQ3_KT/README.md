@@ -22,6 +22,9 @@ In this demonstration, IQ3_KT used approximately **1.8 GB less system RAM** than
   - [Q4_K_M Demonstration](#q4_k_m-demonstration)
   - [RAM Usage Comparison](#ram-usage-comparison)
 - [Stop](#stop)
+- [Deploy Across the AIR Series of Jetson Platforms](#deploy-across-the-air-series-of-jetson-platforms)
+  - [Runtime Selection](#runtime-selection)
+- [Additional IQ3_KT Model Options](#additional-iq3_kt-model-options)
 - [Troubleshooting](#troubleshooting)
 
 ## Model and Runtime
@@ -265,6 +268,38 @@ or
 ```
 
 `stop_q4km.sh` targets the same API container. To restart or switch, use the corresponding run script. It checks the model, NVIDIA Runtime, and local image before replacing the project's container. Wait for active requests to finish first.
+
+## Deploy Across the AIR Series of Jetson Platforms
+
+This walkthrough uses AIR-021 with JetPack 6. The IQ3_KT deployment approach can also extend to AIR-030 and AIR-075 with a compatible runtime, the required model assets, and sufficient memory for the intended workload.
+
+| Platform | NVIDIA Jetson Family | Deployment Context |
+|---|---|---|
+| [AIR-021](https://www.advantech.com/zh-tw/products/932c8818-07cc-4917-89e9-7a678ddc029c/air-021/mod_8d927288-90ef-40d0-b192-f4e86b3d5c7c) | Jetson Orin NX / Nano | This walkthrough uses Orin NX with JetPack 6. |
+| [AIR-030](https://www.advantech.com/zh-tw/products/932c8818-07cc-4917-89e9-7a678ddc029c/air-030/mod_a08e709e-09af-4124-bf1f-42d12c1c2fb0) | Jetson AGX Orin | Additional platform option; match the runtime to the installed JetPack version. |
+| [AIR-075](https://www.advantech.com/zh-tw/products/932c8818-07cc-4917-89e9-7a678ddc029c/air-075/mod_8489cdc1-ab25-48e3-a493-085d8db1860f) | Jetson Thor | JetPack 7 platform; use the JP7 runtime image. |
+
+The [RAM usage comparison](#ram-usage-comparison) applies to the AIR-021 demonstration shown here. Select the model and runtime for the specific hardware and JetPack version.
+
+### Runtime Selection
+
+- **JetPack 6 — this walkthrough:** `advigw/iq3kt-llama-server:jp6_b8779`
+- **JetPack 7 — AIR-075:** `advigw/iq3kt-llama-server:jp7_b8779`
+
+The bundled `scripts/run_iq3kt.sh` fixes `IMAGE` to the JP6 tag. `scripts/run_q4km.sh` calls the same script with a different model filename, so both currently select JP6. Image pulling is a separate setup step; startup uses `--pull=never` and does not select a JetPack version automatically.
+
+For AIR-075 / JetPack 7, pull the JP7 image separately and adjust `IMAGE` in `scripts/run_iq3kt.sh` to the JP7 tag before using either launcher. **Pulling the JP7 image alone does not switch the scripts to it.** Check runtime and model compatibility on the target hardware; the steps and results above cover AIR-021 / JP6.
+
+## Additional IQ3_KT Model Options
+
+Alongside the Qwen3VL-8B-Instruct model used in this walkthrough, Advantech provides IQ3_KT model options in the following repositories:
+
+- [Gemma-4-26B-A4B-it-GGUF](https://huggingface.co/Advantech-EIOT/gemma-4-26B-A4B-it-GGUF)
+- [Qwen3.5-9B-GGUF](https://huggingface.co/Advantech-EIOT/Qwen3.5-9B-GGUF)
+
+Choose the IQ3_KT weights for the selected model and check runtime compatibility, model size, context requirements, and memory available alongside other application services on the target AIR platform. The supplied scripts default to Qwen3VL-8B-Instruct and do not automatically configure these additional models.
+
+If using vision, also obtain the matching multimodal projector and configure a runtime that supports the selected model's vision path. The supplied scripts and the walkthrough above remain text-only.
 
 ## Troubleshooting
 
