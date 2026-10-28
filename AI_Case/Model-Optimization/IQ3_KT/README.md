@@ -66,14 +66,6 @@ cd edge-ai-hub/AI_Case/Model-Optimization/IQ3_KT
 mkdir -p /home/ubuntu/Downloads/iq3kt/models
 ```
 
-**Expected:** the case directory contains `README.md`, `docker-compose.yml`, and `assets/`.
-
-If the repository is already cloned, open its `AI_Case/Model-Optimization/IQ3_KT` directory instead of cloning over an existing folder. The commands below assume the checkout is under `/home/ubuntu/Downloads/edge-ai-hub`.
-
-Keep `docker-compose.yml` in this case directory and run Compose commands here. The model directory is `/home/ubuntu/Downloads/iq3kt/models`; there is no need to copy the Compose file into it.
-
-If a previous version of this case is still running, wait for active requests to finish, then stop only its old API container with `sudo docker stop iq3kt-jp6-api` before starting Compose. Compose does not manage that older container. Leave SDK Chatbot and unrelated services running.
-
 ### Step 2: Download and place the models
 
 Open the [model repository on Hugging Face](https://huggingface.co/Advantech-EIOT/Qwen3VL-8B-Instruct-GGUF). Choose **Files and versions**, open the matching folder, select the main GGUF file, and use its download control.
@@ -101,7 +93,7 @@ curl --fail --location --continue-at - \
 
 `--location` follows redirects, `--continue-at -` resumes an incomplete file, and `--fail` stops on an HTTP error. If both model files have finished downloading, skip these download commands. The table links open the file pages; the `resolve/main` URLs download the files. Resume only if the remote file has not changed since the download began.
 
-### Step 3: Review the Compose configuration and pull the runtime image
+### Step 3: Review the Compose Configuration
 
 Open [docker-compose.yml](docker-compose.yml). It defaults to the JP6 image and IQ3_KT model. The model path and alias in its `command` are:
 
@@ -109,14 +101,6 @@ Open [docker-compose.yml](docker-compose.yml). It defaults to the JP6 image and 
 -m /models/Qwen3VL-8B-Instruct-IQ3_KT.gguf
 --alias Qwen3VL-8B-Instruct-IQ3_KT
 ```
-
-Acquire the runtime before starting the API:
-
-```bash
-sudo docker compose pull
-```
-
-**Expected:** Compose downloads the configured runtime image successfully. Pulling an image does not create an API container or download a model.
 
 ## Development and Deployment
 
@@ -129,7 +113,9 @@ sudo docker compose up
 
 **Expected:** IQ3_KT loads and the server log reports that it is ready to accept requests. If loading fails, resolve the error in the terminal before continuing.
 
-Keep this terminal open while using Chatbot in the browser. Compose displays the service logs here; **Ctrl+C stops the service**. On a fresh setup, Compose can download a missing runtime image, but the model files must already be in the host model directory.
+Compose downloads the configured runtime image if it is not available locally, then starts the service. The GGUF model files must already be in the host model directory.
+
+Keep this terminal open while using Chatbot in the browser. Compose displays the service logs here; **Ctrl+C stops the service**.
 
 <details>
 <summary>Runtime settings used by Compose</summary>
@@ -264,10 +250,9 @@ Wait for active requests to finish and stop the current service before changing 
    image: advigw/iq3kt-llama-server:jp7_b8779
    ```
 
-2. Download the configured runtime image and start the service from the case directory:
+2. Start the service from the case directory:
 
    ```bash
-   sudo docker compose pull
    sudo docker compose up
    ```
 
@@ -280,8 +265,8 @@ The deployment examples and RAM readings in this guide cover JetPack 6. For AIR-
 | Issue | Action |
 |---|---|
 | Model missing or download incomplete | Place the named GGUF under `/home/ubuntu/Downloads/iq3kt/models/` and finish the download before starting. Confirm that the `-m` path in `docker-compose.yml` matches the filename. |
-| NVIDIA Runtime or image unavailable | Ensure Docker has NVIDIA Runtime configured and use `sudo docker compose pull` for the selected image. Resolve host compatibility; do not substitute a different runtime blindly. |
-| Port 18081 occupied | Identify the listener and stop it only if it is the old API for this case. Compose does not manage older standalone containers or unrelated services; avoid global container or process cleanup. |
+| NVIDIA Runtime or image unavailable | Ensure Docker has NVIDIA Runtime configured. Check the image name, registry connectivity, and host compatibility; do not substitute a different runtime blindly. |
+| Port 18081 occupied | Identify the listener before taking action. Stop it only if you recognize it and are authorized to do so; do not stop unknown services or perform global container or process cleanup. |
 | Model API stopped after Ctrl+C | `docker compose up` runs in the foreground. Keep that terminal open during Chatbot use; run `sudo docker compose up` again to restart. |
 | API not ready or model load failed | Check available memory and the service logs before continuing to Chatbot. |
 | Chatbot missing the model or showing the old name | Confirm that the service has loaded the selected model, the connection URL includes `/v1`, and `--alias` matches the intended model ID. Reload the Chatbot model list and select the current model. |
