@@ -1,4 +1,4 @@
-# IQ3_KT on NVIDIA Jetson
+# How to deploy an IQ3_KT VLM model on AIR-021 NVIDIA Jetson Orin NX Platform.
 
 Deploy Qwen3VL-8B-Instruct with IQ3_KT quantization on an NVIDIA Jetson using Docker Compose, expose a local OpenAI-compatible API, and chat through the existing Edge AI SDK Chatbot. This case also shows how to switch to Q4_K_M using the same runtime.
 
