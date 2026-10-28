@@ -124,9 +124,19 @@ The service uses NVIDIA Runtime, host networking, and a read-only model mount. N
 
 </details>
 
-### Step 2: Connect Edge AI SDK Chatbot
+### Step 2: Launch Edge AI SDK Chatbot
 
-On the same Jetson, open **http://localhost:23950/** and sign in normally. Go to **Admin Settings → Connections → OpenAI**; labels may differ slightly between SDK versions.
+Open Edge AI SDK on the same Jetson. Click the **Chatbot** icon in the left sidebar, then click **General** in the **Demo** panel.
+
+![Edge AI SDK Chatbot launch page: click General in the Demo panel.](assets/Edge_AI_SDK_Chatbot.png)
+
+Wait several seconds for the SDK to load its default model and automatically open Chatbot in a browser. Once the page is ready, sign in normally.
+
+**Chatbot URL:** http://localhost:23950/
+
+### Step 3: Connect Edge AI SDK Chatbot
+
+Go to **Admin Settings → Connections → OpenAI**; labels may differ slightly between SDK versions.
 
 1. Enable the OpenAI API if disabled.
 2. Reuse a matching connection, or add the exact base URL below.
@@ -141,7 +151,7 @@ http://127.0.0.1:18081/v1
 
 Keep existing connections and chat data. If connection settings are unavailable, ask your SDK administrator for access.
 
-### Step 3: Select IQ3_KT and send one message
+### Step 4: Select IQ3_KT and send one message
 
 Select `Qwen3VL-8B-Instruct-IQ3_KT`, open a new conversation, and send the following once:
 
@@ -155,7 +165,7 @@ who are you?
 
 See the [IQ3_KT demonstration](#iq3_kt-demonstration) below.
 
-### Step 4: Switch to Q4_K_M
+### Step 5: Switch to Q4_K_M
 
 Wait until IQ3_KT has finished responding, then press **Ctrl+C** in the Compose terminal and wait for the service to stop. Both models use the same service and API port; this configuration loads one model at a time.
 
